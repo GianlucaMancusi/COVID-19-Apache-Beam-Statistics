@@ -1,5 +1,5 @@
 # COVID-19-Apache-Beam-Statistics
-Statistical processing of COVID-19 data using Apache Beam for Google Cloud Dataflow in Python. Project for the examination of Cloud Systems and Applications (2019-20), course *Magistrale di Ingegneria Informatica presso il Dipartimento di Ingegneria Enzo Ferrari*. 
+Statistical processing of COVID-19 data using Apache Beam for Google Cloud Dataflow in Python. Project for the examination of Cloud Systems and Applications (2019-20), course *Magistrale di Ingegneria Informatica at the Dipartimento di Ingegneria Enzo Ferrari*. 
 
 ## Type of data accepted
 The type of data accepted follows the data scheme by province proposed by the repository [pcm-dpc/COVID-19](https://github.com/pcm-dpc/COVID-19) Italian.
