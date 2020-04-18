@@ -22,6 +22,7 @@ optional arguments:
 ### Data by Province
 **Directory:**  datasets<br>
 **Overall file:** dpc-covid19-ita-province.csv<br>
+Notice: this table is taken from [pcm-dpc/COVID-19](https://github.com/pcm-dpc/COVID-19) italian repository.
 
 | Nome campo              | Descrizione                         | Formato            | Esempio              |
 |-------------------------|-------------------------------------|--------------------|----------------------|
