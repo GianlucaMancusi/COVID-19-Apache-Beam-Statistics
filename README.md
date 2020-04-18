@@ -58,6 +58,8 @@ The meaning of the fields is as follows:
 ...
 ```
 
+### Pipeline result on Google Dataflow
+![Pipeline on Google Dataflow](https://raw.githubusercontent.com/GianlucaMancusi/COVID-19-Apache-Beam-Statistics/master/readme_images/pipeline.png)
 
 ### Complete output example
 ```json
