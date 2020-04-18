@@ -177,3 +177,4 @@ In order to execute the pipeline on Dataflow you have to store the csv input on 
 ```powershell
 python .\covid_pipeline.py --project PROJECT_NAME --runner DataflowRunner --temp_location gs://GOOGLE_STORAGE/temp --output gs://GOOGLE_STORAGE/results/output --job_name dataflow-covid --input gs://GOOGLE_STORAGE/dpc-covid19-ita-province.csv --region europe-west2
 ```
+more info [here](https://cloud.google.com/dataflow/docs/quickstarts/quickstart-python).
