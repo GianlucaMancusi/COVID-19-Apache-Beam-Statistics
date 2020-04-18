@@ -2,11 +2,8 @@
 # Copyright (c) 2020 Gianluca Mancusi
 
 import apache_beam as beam
-
-import json
-
 from apache_beam.options.pipeline_options import PipelineOptions
-
+import json
 
 
 class CovidOptions(PipelineOptions):
@@ -87,6 +84,7 @@ class GetLastDatesOnly(beam.CombineFn):
     This CombineFn type function calculates the maximum date 
     and returns only that with the value of COVID-19 cases.
     '''
+
     def create_accumulator(self):
         from datetime import datetime
         return (datetime.min, 0.0)  # dates, cases
