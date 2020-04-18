@@ -19,7 +19,7 @@ optional arguments:
   --ntop NTOP      Number of top day cases to show
 ```
 
-### Data by Province
+### Input dataset format: Data by Province
 **Directory:**  datasets<br>
 **Overall file:** dpc-covid19-ita-province.csv<br>
 Notice: this table is taken from [pcm-dpc/COVID-19](https://github.com/pcm-dpc/COVID-19) italian repository.
@@ -43,7 +43,7 @@ Notice: this table is taken from [pcm-dpc/COVID-19](https://github.com/pcm-dpc/C
 *Each Region has a Province named "In fase di definizione/aggiornamento" with the province code from 979 to 999, useful to indicate the data not yet assigned to the Provinces.*<br>.
 ( * ) These are the data used by the pipeline to compute the output.
 
-## How is the output
+## The output
 The output is printed in the [JSON Lines](http://jsonlines.org/examples/) format.
 An example of output is the following, for each Region-Province:
 ```json
