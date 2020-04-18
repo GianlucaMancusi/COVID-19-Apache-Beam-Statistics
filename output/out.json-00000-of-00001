@@ -1,66 +1,3 @@
-# COVID-19-Apache-Beam-Statistics
-Statistical processing of COVID-19 data using Apache Beam for Google Cloud Dataflow in Python. Project for the examination of Cloud Systems and Applications (2019-20), course *Magistrale di Ingegneria Informatica presso il Dipartimento di Ingegneria Enzo Ferrari*. 
-
-## How to install
-Run the *pip* command to download all the dependencies in the *requirements.txt* using your preferred virtualenv:<br>
-`pip install -r requirements.txt`
-
-## Accepted dataset
-The type of data accepted follows the data scheme by province proposed by the repository [pcm-dpc/COVID-19](https://github.com/pcm-dpc/COVID-19) Italian.
-
-## Input CLI
-```
-usage: covid_pipeline.py [-h] [--input INPUT] [--output OUTPUT] [--ntop NTOP]
-
-optional arguments:
-  -h, --help       show this help message and exit
-  --input INPUT    Input dataset for the pipeline
-  --output OUTPUT  Output file name for the pipeline
-  --ntop NTOP      Number of top day cases to show
-```
-
-### Data by Province
-**Directory:**  datasets<br>
-**Overall file:** dpc-covid19-ita-province.csv<br>
-
-| Nome campo              | Descrizione                         | Formato            | Esempio              |
-|-------------------------|-------------------------------------|--------------------|----------------------|
-| **data** ( * )                   | Data dell'informazione              | YYYY-MM-DD HH:MM:SS (ISO 8601) Ora italiana           | 2020-03-05 12:15:45 |                   |
-|   stato                    | Stato di riferimento                | ISO 3166-1 alpha-3 | ITA                  |
-|   codice_regione            | Codice della Regione (ISTAT 2019)   | Numero             | 13                   |
-| **denominazione_regione** ( * )  | Denominazione della Regione         | Testo              | Abruzzo              |
-|   codice_provincia          | Codice della Provincia (ISTAT 2019) | Numero             | 067                  |
-| **denominazione_provincia** ( * )| Denominazione della provincia       | Testo              | Teramo               |
-|   sigla_provincia           | Sigla della Provincia               | Testo              | TE                   |
-|   lat                       | Latitudine                          | Latitude                        | WGS84              | 42.6589177           |
-|   long                      | Longitudine                         |WGS84              | 13.70439971          |
-| **totale_casi** ( * )             | Totale casi positivi                | Numero             | 3                    |
-|   note_it                       | Note in lingua italiana (separate da ;)                   | Testo                        | pd-IT-000                   |
-|   note_en                       | Note in lingua inglese (separate da ;)                    | Testo                        | pd-EN-000                   |
-
-*The Autonomous Provinces of Trento and Bolzano are indicated in "denominazione_regione" and with the code 04 of Trentino Alto Adige.*<br>.
-*Each Region has a Province named "In fase di definizione/aggiornamento" with the province code from 979 to 999, useful to indicate the data not yet assigned to the Provinces.*<br>.
-( * ) These are the data used by the pipeline to compute the output.
-
-## How is the output
-The output is printed in the [JSON Lines](http://jsonlines.org/examples/) format.
-An example of output is the following, for each Region-Province:
-```json
-...
-["Emilia-Romagna,Modena", {"cases_statistics": [{"mean": 1320.6851851851852, "variance": 1472316.4749657065, "stddev": 1213.3904874217972}], "top_3_cases": [[3301, 3262, 3217]], "last_data": [{"date": "2020-04-17", "cases": 3301}]}]
-...
-```
-
-The meaning of the fields is as follows:
-```json
-...
-["REGION,PROVINCE", {"cases_statistics": [{"mean": MEAN, "variance": VARIANCE, "stddev": STANDARD_DEV}], "top_<ntop>_cases": [[TOP_1, TOP_2,...., TOP_N]], "last_data": [{"date": "LAST_UPDATE_DATA", "cases": LAST_TOTAL_CASES}]}]
-...
-```
-
-
-### Complete example output
-```json
 ["Abruzzo,Chieti", {"cases_statistics": [{"mean": 168.59259259259258, "variance": 30226.167352537726, "stddev": 173.85674376491045}], "top_3_cases": [[553, 499, 469]], "last_data": [{"date": "2020-04-17", "cases": 553}]}]
 ["Abruzzo,L'Aquila", {"cases_statistics": [{"mean": 79.79629629629629, "variance": 7423.939986282579, "stddev": 86.16228865508727}], "top_3_cases": [[233, 232, 229]], "last_data": [{"date": "2020-04-17", "cases": 233}]}]
 ["Abruzzo,Pescara", {"cases_statistics": [{"mean": 372.6666666666667, "variance": 125296.44444444441, "stddev": 353.97237808117796}], "top_3_cases": [[1042, 1005, 971]], "last_data": [{"date": "2020-04-17", "cases": 1042}]}]
@@ -168,4 +105,3 @@ The meaning of the fields is as follows:
 ["Veneto,Venezia", {"cases_statistics": [{"mean": 801.925925925926, "variance": 491369.0685871056, "stddev": 700.9772240145222}], "top_3_cases": [[2096, 2036, 2013]], "last_data": [{"date": "2020-04-17", "cases": 2096}]}]
 ["Veneto,Verona", {"cases_statistics": [{"mean": 1358.0555555555557, "variance": 1751735.8672839503, "stddev": 1323.531589076721}], "top_3_cases": [[3805, 3730, 3649]], "last_data": [{"date": "2020-04-17", "cases": 3805}]}]
 ["Veneto,Vicenza", {"cases_statistics": [{"mean": 818.3518518518518, "variance": 612272.6354595338, "stddev": 782.4785207656079}], "top_3_cases": [[2200, 2170, 2136]], "last_data": [{"date": "2020-04-17", "cases": 2200}]}]
-```
