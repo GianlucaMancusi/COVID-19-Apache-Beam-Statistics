@@ -6,7 +6,7 @@ Run the *pip* command to download all the dependencies in the *requirements.txt*
 `pip install -r requirements.txt`
 
 ## Accepted dataset
-The type of data accepted follows the data scheme by province proposed by the repository [pcm-dpc/COVID-19](https://github.com/pcm-dpc/COVID-19) Italian.
+The type of data accepted follows the data scheme by province proposed by the repository [pcm-dpc/COVID-19](https://github.com/pcm-dpc/COVID-19) Italian. In particular, the file on which it runs is the following: [dpc-covid19-ita-province.csv](https://github.com/pcm-dpc/COVID-19/blob/master/dati-province/dpc-covid19-ita-province.csv)
 
 ## Input CLI
 ```
@@ -59,7 +59,7 @@ The meaning of the fields is as follows:
 ```
 
 
-### Complete example output
+### Complete output example
 ```json
 ["Abruzzo,Chieti", {"cases_statistics": [{"mean": 168.59259259259258, "variance": 30226.167352537726, "stddev": 173.85674376491045}], "top_3_cases": [[553, 499, 469]], "last_data": [{"date": "2020-04-17", "cases": 553}]}]
 ["Abruzzo,L'Aquila", {"cases_statistics": [{"mean": 79.79629629629629, "variance": 7423.939986282579, "stddev": 86.16228865508727}], "top_3_cases": [[233, 232, 229]], "last_data": [{"date": "2020-04-17", "cases": 233}]}]
