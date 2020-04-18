@@ -49,7 +49,7 @@ Un esempio di output è il seguente, per ogni Regione-Provincia:
 The meaning of the fields is as follows:
 ```python
 ...
-('REGION,PROVINCE', {'cases_statistics': [{'mean': STATISTIC_MEAN, 'variance': STATISTIC_VARIANCE, 'stddev': STANDARD_DEVIATION}], 'top_<ntop>_cases': [[TOP_1_DAY_CASES, TOP_2_DAY_CASES, ..., TOP_<ntop>_DAY_CASES]], 'last_data': [{'date': 'LAST_DATE_IN_THE_DATASET', 'cases': LAST_CASES_IN_THE_DATASET}]})
+('REGION,PROVINCE', {'cases_statistics': [{'mean': STATISTIC_MEAN, 'variance': STATISTIC_VARIANCE, 'stddev': STANDARD_DEVIATION}], 'top_<ntop>_cases': [[TOP_1_DAY_CASES, TOP_2_DAY_CASES, ..., TOP_<ntop>_DAY_CASES]], 'last_data': [{'date': 'YYYY-MM-DD_LAST_DATE_IN_THE_DATASET', 'cases': LAST_CASES_IN_THE_DATASET}]})
 ...
 ```
 
