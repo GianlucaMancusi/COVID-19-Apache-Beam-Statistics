@@ -171,3 +171,9 @@ The meaning of the fields is as follows:
 ["Veneto,Verona", {"cases_statistics": [{"mean": 1358.0555555555557, "variance": 1751735.8672839503, "stddev": 1323.531589076721}], "top_3_cases": [[3805, 3730, 3649]], "last_data": [{"date": "2020-04-17", "cases": 3805}]}]
 ["Veneto,Vicenza", {"cases_statistics": [{"mean": 818.3518518518518, "variance": 612272.6354595338, "stddev": 782.4785207656079}], "top_3_cases": [[2200, 2170, 2136]], "last_data": [{"date": "2020-04-17", "cases": 2200}]}]
 ```
+
+### Execution on Google Dataflow
+In order to execute the pipeline on Dataflow you have to store the input csv on Google Cloud Storage and execute the following command:
+```powershell
+python .\covid_pipeline.py --project PROJECT_NAME --runner DataflowRunner --temp_location gs://GOOGLE_STORAGE/temp --output gs://GOOGLE_STORAGE/results/output --job_name dataflow-covid --input gs://GOOGLE_STORAGE/dpc-covid19-ita-province.csv --region europe-west2
+```
