@@ -173,7 +173,7 @@ The meaning of the fields is as follows:
 ```
 
 ### Execution on Google Dataflow
-In order to execute the pipeline on Dataflow you have to store the input csv on Google Cloud Storage and execute the following command:
+In order to execute the pipeline on Dataflow you have to store the csv input on Google Cloud Storage and execute the following command:
 ```powershell
 python .\covid_pipeline.py --project PROJECT_NAME --runner DataflowRunner --temp_location gs://GOOGLE_STORAGE/temp --output gs://GOOGLE_STORAGE/results/output --job_name dataflow-covid --input gs://GOOGLE_STORAGE/dpc-covid19-ita-province.csv --region europe-west2
 ```
