@@ -1,4 +1,4 @@
-# COVID-19-Apache-Beam-Statistics
+# COVID-19 Apache Beam statistics on Google Dataflow
 Statistical processing of COVID-19 data using Apache Beam for Google Cloud Dataflow in Python. Project for the exam of "Sistemi ed Applicazioni Cloud" (2019-20), *Magistrale di Ingegneria Informatica at the Dipartimento di Ingegneria Enzo Ferrari*.
 
 ## How to install
