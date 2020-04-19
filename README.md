@@ -44,7 +44,7 @@ Notice: this table is taken from [pcm-dpc/COVID-19](https://github.com/pcm-dpc/C
 ( * ) These are the data used by the pipeline to compute the output.
 
 ## The output
-The output is printed in the [JSON Lines](http://jsonlines.org/examples/) format.
+The output is printed as [JSON Lines](http://jsonlines.org/examples/) format.
 An example of output is the following, for each Region-Province:
 ```json
 ...
